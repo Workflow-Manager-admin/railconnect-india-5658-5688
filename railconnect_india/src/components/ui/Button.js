@@ -7,15 +7,17 @@ import '../../styles/glassmorphism.css';
  * 
  * PUBLIC_INTERFACE
  */
-const Button = ({
-  children, 
-  variant = 'primary', 
-  size = 'medium',
-  onClick,
-  className = '',
-  disabled = false,
-  ...otherProps 
-}) => {
+const Button = (props) => {
+  const { 
+    children, 
+    variant = 'primary', 
+    size = 'medium',
+    onClick,
+    className = '',
+    disabled = false,
+    ...otherProps 
+  } = props;
+  
   const { theme } = useContext(ThemeContext);
   
   return (
