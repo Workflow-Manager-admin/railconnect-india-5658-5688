@@ -62,7 +62,9 @@ const TrainList = ({ trains, onBookTrain }) => {
                   {cls.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                 </div>
                 <div className="class-price">₹{price}</div>
-                <div className="class-availability">{train.availability[cls]}</div>
+                <div className={`class-availability ${train.availability[cls].includes('WL') ? 'waitlist' : ''}`}>
+                  {train.availability[cls]}
+                </div>
                 <Button 
                   size="small" 
                   variant={train.availability[cls].includes('WL') ? 'outline' : 'primary'}

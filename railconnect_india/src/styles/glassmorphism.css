@@ -335,7 +335,7 @@
   color: var(--success-color);
 }
 
-.class-availability:contains('WL') {
+.class-availability.waitlist {
   color: var(--warning-color);
 }
 
