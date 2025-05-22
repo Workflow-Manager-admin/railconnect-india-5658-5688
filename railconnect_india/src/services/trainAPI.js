@@ -42,10 +42,27 @@ const trainAPI = {
    */
   getLiveStationData: async (stationCode) => {
     try {
-      const response = await apiClient.get(`/getLiveStation?hours=1&stationCode=${stationCode}`);
+      const response = await apiClient.get(`/api/v3/getLiveStation?hours=1&stationCode=${stationCode}`);
       return response.data;
     } catch (error) {
       console.error('Error fetching station data:', error);
+      throw error;
+    }
+  },
+  
+  /**
+   * Fetch train schedule data for a given train number
+   * 
+   * PUBLIC_INTERFACE
+   * @param {string} trainNumber - The train number to get schedule for
+   * @returns {Promise} - Promise resolving to train schedule data
+   */
+  getTrainSchedule: async (trainNumber) => {
+    try {
+      const response = await apiClient.get(`/api/v1/getTrainScheduleV2?trainNo=${trainNumber}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching train schedule:', error);
       throw error;
     }
   }
