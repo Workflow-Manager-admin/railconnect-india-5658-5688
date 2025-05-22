@@ -1,0 +1,709 @@
+/* Glassmorphism Styles */
+@import './themes.css';
+
+/* Glass Card */
+.glass-card {
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  backdrop-filter: var(--backdrop-filter);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: all var(--transition-speed);
+}
+
+.glass-card:hover {
+  box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.light-card {
+  background: var(--light-card-bg);
+}
+
+.dark-card {
+  background: var(--dark-card-bg);
+}
+
+/* Glass Button */
+.glass-button {
+  background: var(--surface-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  backdrop-filter: var(--backdrop-filter);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+}
+
+.glass-button:hover {
+  background: var(--hover-bg-color);
+}
+
+.glass-button:active {
+  transform: translateY(1px);
+}
+
+.glass-button.primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.glass-button.primary:hover {
+  filter: brightness(110%);
+}
+
+.glass-button.outline {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.glass-button.outline:hover {
+  background: var(--hover-bg-color);
+}
+
+.glass-button.small {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.glass-button.medium {
+  padding: 0.5rem 1rem;
+}
+
+.glass-button.large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Disabled state for buttons */
+.glass-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Glass Input */
+.glass-input {
+  background: var(--input-bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  padding: 0.65rem 1rem;
+  width: 100%;
+  transition: all var(--transition-speed);
+  backdrop-filter: var(--backdrop-filter);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.glass-input.error {
+  border-color: var(--error-color);
+}
+
+.input-group {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.input-error {
+  color: var(--error-color);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.theme-toggle:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.light-toggle svg {
+  stroke: var(--light-text);
+}
+
+.dark-toggle svg {
+  stroke: var(--dark-text);
+}
+
+/* Navbar */
+.navbar {
+  backdrop-filter: var(--backdrop-filter);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
+  transition: all var(--transition-speed);
+}
+
+.glass-navbar {
+  background: var(--surface-color);
+}
+
+.light-navbar {
+  background: var(--light-surface);
+}
+
+.dark-navbar {
+  background: var(--dark-surface);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Form styles */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-button-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* Train Lists */
+.train-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.train-card {
+  padding: 1.5rem;
+}
+
+.train-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.train-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.train-name h3 {
+  margin: 0;
+}
+
+.train-number {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}
+
+.train-days {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}
+
+.train-journey {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.train-station {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-line {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.journey-line .line {
+  height: 2px;
+  background-color: var(--border-color);
+  width: 100%;
+  position: relative;
+}
+
+.journey-line .duration {
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 0.25rem;
+}
+
+.journey-line .distance {
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  margin-top: 0.25rem;
+}
+
+.time {
+  font-weight: 600;
+}
+
+.station {
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 150px;
+}
+
+.class-options {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.class-option {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-top: 0.75rem;
+}
+
+.class-name, .class-price, .class-availability {
+  margin-right: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.class-name {
+  font-weight: 500;
+}
+
+.class-price {
+  color: var(--text-secondary-color);
+}
+
+.class-availability {
+  color: var(--success-color);
+}
+
+.class-availability:contains('WL') {
+  color: var(--warning-color);
+}
+
+/* Train Tracking */
+.tracking-form {
+  margin-bottom: 1rem;
+}
+
+.tracking-input-group {
+  flex-grow: 2;
+}
+
+.tracking-button-group {
+  align-self: flex-end;
+}
+
+.tracking-examples {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.example-train {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  text-decoration: underline;
+}
+
+.tracking-result {
+  margin-top: 2rem;
+}
+
+.tracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tracking-header h3 {
+  margin: 0;
+}
+
+.train-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.status-indicator.on-time {
+  background-color: var(--on-time-color);
+}
+
+.status-indicator.delayed {
+  background-color: var(--delayed-color);
+}
+
+.tracking-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  font-weight: 500;
+}
+
+.train-route {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.train-route h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.route-progress {
+  height: 0.5rem;
+  background-color: var(--border-color);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+}
+
+.route-stations {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.route-stations::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--rail-line-color);
+  z-index: -1;
+}
+
+.route-station {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.station-time {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.station-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--rail-line-color);
+  margin-bottom: 0.5rem;
+}
+
+.station-name {
+  font-size: 0.85rem;
+  max-width: 100px;
+  overflow-wrap: break-word;
+}
+
+.route-station.completed .station-dot {
+  background-color: var(--completed-color);
+}
+
+.route-station.current .station-dot {
+  background-color: var(--current-color);
+  transform: scale(1.5);
+  box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.3);
+}
+
+.tracking-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.loader-animation {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.booking-confirmation {
+  margin-top: 2rem;
+}
+
+.booking-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.booking-detail {
+  padding: 0.5rem;
+}
+
+.booking-detail.total {
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.booking-message {
+  padding: 1rem;
+  background-color: var(--success-color);
+  color: white;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: 500;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 2rem;
+}
+
+.input-with-suggestions {
+  position: relative;
+  width: 100%;
+}
+
+.suggestions {
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  background: var(--surface-solid-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.suggestion-item {
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.light-suggestions {
+  background: var(--light-surface-solid);
+}
+
+.dark-suggestions {
+  background: var(--dark-surface-solid);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .sections-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tracking-header, 
+  .train-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .route-stations {
+    overflow-x: auto;
+  }
+  
+  .route-station {
+    min-width: 100px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.glass-card,
+.tracking-result,
+.booking-confirmation {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Container layout styles */
+.main-container {
+  min-height: 100vh;
+  transition: background-color var(--transition-speed);
+}
+
+.light-container {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+.dark-container {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-secondary-color);
+  font-size: 1.1rem;
+}
+
+.sections-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.section-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.logo-symbol {
+  font-size: 1.5rem;
+}
