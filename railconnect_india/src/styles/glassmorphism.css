@@ -362,6 +362,46 @@
   align-items: center;
 }
 
+/* Train schedule table styles */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-table th {
+  font-weight: 600;
+  color: var(--text-secondary-color);
+}
+
+.schedule-table tbody tr:hover {
+  background-color: var(--hover-bg-color);
+}
+
+/* Make schedule table responsive */
+@media (max-width: 768px) {
+  .schedule-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+.train-type {
+  font-size: 0.9rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+}
+
 .example-train {
   background: none;
   border: none;
