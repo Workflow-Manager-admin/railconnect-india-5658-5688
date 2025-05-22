@@ -15,17 +15,15 @@ import '../../styles/glassmorphism.css';
  * @param {string} [props.className] - Additional CSS class names
  * @param {boolean} [props.disabled=false] - Whether button is disabled
  */
-const Button = (props) => {
-  const { 
-    children, 
-    variant = 'primary', 
-    size = 'medium',
-    onClick,
-    className = '',
-    disabled = false,
-    ...otherProps 
-  } = props;
-  
+const Button = ({ 
+  children, 
+  variant = 'primary', 
+  size = 'medium',
+  onClick,
+  className = '',
+  disabled = false,
+  ...otherProps 
+}) => {
   const { theme } = useContext(ThemeContext);
   
   return (
