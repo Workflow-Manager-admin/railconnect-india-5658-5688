@@ -4,11 +4,11 @@ import Card from '../ui/Card';
 import '../../styles/glassmorphism.css';
 
 /**
- * TrackingResult component to display train tracking information
+ * TrackingResult component to display train schedule information
  * 
  * PUBLIC_INTERFACE
  * @param {Object} props
- * @param {Object} props.trackingData - Train tracking data to display
+ * @param {Object} props.trackingData - Train schedule data to display
  * @param {boolean} props.isLoading - Loading state indicator
  * @param {Object} props.error - Error object if request failed
  */
