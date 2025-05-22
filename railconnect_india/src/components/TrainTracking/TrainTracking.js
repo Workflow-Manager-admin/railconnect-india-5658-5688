@@ -32,12 +32,12 @@ const TrainTracking = () => {
     
     try {
       // Real API call
-      const data = await trainAPI.getTrainLiveStatus(trainNumber);
+      const data = await trainAPI.getTrainSchedule(trainNumber);
       setTrackingData(data);
     } catch (err) {
-      console.error('Error tracking train:', err);
+      console.error('Error getting train schedule:', err);
       setError({
-        message: err.response?.data?.message || err.message || 'Failed to fetch train information'
+        message: err.response?.data?.message || err.message || 'Failed to fetch train schedule'
       });
       
       // For demo purposes, set mock data if API fails
@@ -46,21 +46,21 @@ const TrainTracking = () => {
         data: {
           train_number: trainNumber,
           train_name: "Rajdhani Express",
-          delay_status: "ON TIME",
-          current_station_name: "Bhopal Junction",
-          next_station_name: "Nagpur Junction",
-          last_update: "10 minutes ago",
-          expected_arrival: "On time (14:35)",
-          distance_covered: "450",
-          journey_progress: 65,
-          route: [
-            { station_name: "New Delhi", scheduled_arrival: "06:00", status: "completed" },
-            { station_name: "Agra Cantt", scheduled_arrival: "08:30", status: "completed" },
-            { station_name: "Gwalior", scheduled_arrival: "10:15", status: "completed" },
-            { station_name: "Bhopal Junction", scheduled_arrival: "13:30", status: "current" },
-            { station_name: "Nagpur Junction", scheduled_arrival: "17:45", status: "upcoming" },
-            { station_name: "Secunderabad", scheduled_arrival: "23:15", status: "upcoming" },
-            { station_name: "Chennai Central", scheduled_arrival: "05:30", status: "upcoming" }
+          train_origin_station: "New Delhi",
+          train_destination_station: "Mumbai Central",
+          train_type: "Rajdhani",
+          run_days: "Mon, Wed, Fri, Sun",
+          total_travel_time: "15h 50m",
+          route_stations: [
+            { station_name: "New Delhi", arrival_time: "-", departure_time: "16:25", day: 1, halt_time: "-", distance_from_origin: "0" },
+            { station_name: "Mathura Junction", arrival_time: "18:15", departure_time: "18:20", day: 1, halt_time: "5min", distance_from_origin: "150" },
+            { station_name: "Agra Cantt", arrival_time: "19:00", departure_time: "19:05", day: 1, halt_time: "5min", distance_from_origin: "195" },
+            { station_name: "Gwalior", arrival_time: "20:35", departure_time: "20:40", day: 1, halt_time: "5min", distance_from_origin: "305" },
+            { station_name: "Jhansi Junction", arrival_time: "21:25", departure_time: "21:35", day: 1, halt_time: "10min", distance_from_origin: "405" },
+            { station_name: "Bhopal Junction", arrival_time: "00:55", departure_time: "01:00", day: 2, halt_time: "5min", distance_from_origin: "705" },
+            { station_name: "Nagpur Junction", arrival_time: "05:35", departure_time: "05:45", day: 2, halt_time: "10min", distance_from_origin: "975" },
+            { station_name: "Bhusaval Junction", arrival_time: "10:35", departure_time: "10:40", day: 2, halt_time: "5min", distance_from_origin: "1205" },
+            { station_name: "Mumbai Central", arrival_time: "08:15", departure_time: "-", day: 2, halt_time: "-", distance_from_origin: "1384" }
           ]
         }
       });
@@ -88,7 +88,7 @@ const TrainTracking = () => {
           </div>
           <div className="form-group tracking-button-group">
             <Button type="submit" variant="primary" disabled={isLoading}>
-              {isLoading ? 'Tracking...' : 'Track Train'}
+              {isLoading ? 'Loading...' : 'Get Schedule'}
             </Button>
           </div>
         </div>
