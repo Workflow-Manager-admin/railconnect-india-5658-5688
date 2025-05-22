@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // IRCTC API configuration
 const apiConfig = {
-  baseURL: 'https://irctc1.p.rapidapi.com/api/v3',
+  baseURL: 'https://irctc1.p.rapidapi.com',
   headers: {
     'x-rapidapi-key': 'fc336ed19cmsh85bb33b36c048d8p1c5e10jsn44538342dc79',
     'x-rapidapi-host': 'irctc1.p.rapidapi.com'
