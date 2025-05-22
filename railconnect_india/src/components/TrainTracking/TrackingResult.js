@@ -19,7 +19,7 @@ const TrackingResult = ({ trackingData, isLoading, error }) => {
     return (
       <div className={`tracking-loader ${theme}-loader`}>
         <div className="loader-animation"></div>
-        <p>Fetching real-time train information...</p>
+        <p>Fetching train schedule information...</p>
       </div>
     );
   }
