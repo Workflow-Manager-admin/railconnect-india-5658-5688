@@ -108,6 +108,13 @@ const TrainTracking = () => {
           >
             Shatabdi Express (12002)
           </button>
+          <button 
+            type="button" 
+            className="example-train" 
+            onClick={() => setTrainNumber('22691')}
+          >
+            Rajdhani Express (22691)
+          </button>
         </div>
       </form>
       
