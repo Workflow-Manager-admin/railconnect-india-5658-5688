@@ -25,7 +25,7 @@ const trainAPI = {
    */
   getTrainLiveStatus: async (trainNumber) => {
     try {
-      const response = await apiClient.get(`/getLiveTrainPosition?trainNo=${trainNumber}`);
+      const response = await apiClient.get(`/api/v3/getLiveTrainPosition?trainNo=${trainNumber}`);
       return response.data;
     } catch (error) {
       console.error('Error fetching train status:', error);
