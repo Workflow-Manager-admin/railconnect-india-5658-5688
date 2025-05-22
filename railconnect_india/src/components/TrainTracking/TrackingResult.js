@@ -48,63 +48,64 @@ const TrackingResult = ({ trackingData, isLoading, error }) => {
           <div className="tracking-header">
             <h3>{trackingData.data?.train_name || 'Train'} ({trackingData.data?.train_number})</h3>
             <div className="train-status">
-              <span className={`status-indicator ${trackingData.data?.delay_status === 'ON TIME' ? 'on-time' : 'delayed'}`}></span>
-              {trackingData.data?.delay_status || 'Status Unknown'}
+              <span className="train-type">{trackingData.data?.train_type || 'N/A'}</span>
             </div>
           </div>
           
           <div className="tracking-details">
             <div className="detail-item">
-              <span className="detail-label">Current Station:</span>
-              <span className="detail-value">{trackingData.data?.current_station_name || 'N/A'}</span>
+              <span className="detail-label">Origin:</span>
+              <span className="detail-value">{trackingData.data?.train_origin_station || 'N/A'}</span>
             </div>
             <div className="detail-item">
-              <span className="detail-label">Last Update:</span>
-              <span className="detail-value">{trackingData.data?.last_update || 'N/A'}</span>
+              <span className="detail-label">Destination:</span>
+              <span className="detail-value">{trackingData.data?.train_destination_station || 'N/A'}</span>
             </div>
             <div className="detail-item">
-              <span className="detail-label">Next Station:</span>
-              <span className="detail-value">{trackingData.data?.next_station_name || 'N/A'}</span>
+              <span className="detail-label">Total Travel Time:</span>
+              <span className="detail-value">{trackingData.data?.total_travel_time || 'N/A'}</span>
             </div>
             <div className="detail-item">
-              <span className="detail-label">Expected Arrival:</span>
-              <span className="detail-value">{trackingData.data?.expected_arrival || 'N/A'}</span>
-            </div>
-            <div className="detail-item">
-              <span className="detail-label">Distance Covered:</span>
-              <span className="detail-value">{trackingData.data?.distance_covered || 'N/A'} km</span>
+              <span className="detail-label">Run Days:</span>
+              <span className="detail-value">{trackingData.data?.run_days || 'N/A'}</span>
             </div>
           </div>
           
-          {trackingData.data?.route && (
+          {trackingData.data?.route_stations && (
             <div className="train-route">
-              <h4>Journey Progress</h4>
-              <div className="route-progress">
-                <div 
-                  className="progress-bar"
-                  style={{ width: `${trackingData.data?.journey_progress || 0}%` }}
-                ></div>
-              </div>
+              <h4>Train Schedule</h4>
               
-              <div className="route-stations">
-                {trackingData.data?.route.map((station, index) => (
-                  <div 
-                    key={index}
-                    className={`route-station ${station.status || ''}`}
-                  >
-                    <div className="station-time">{station.scheduled_arrival}</div>
-                    <div className="station-dot"></div>
-                    <div className="station-name">{station.station_name}</div>
-                  </div>
-                ))}
-              </div>
+              <table className="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Station</th>
+                    <th>Day</th>
+                    <th>Arrival</th>
+                    <th>Departure</th>
+                    <th>Halt</th>
+                    <th>Distance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {trackingData.data?.route_stations.map((station, index) => (
+                    <tr key={index}>
+                      <td>{station.station_name}</td>
+                      <td>{station.day}</td>
+                      <td>{station.arrival_time}</td>
+                      <td>{station.departure_time}</td>
+                      <td>{station.halt_time}</td>
+                      <td>{station.distance_from_origin} km</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </>
       ) : (
         <div className="no-data-message">
-          <h3>No Data Available</h3>
-          <p>Could not find tracking information for this train number.</p>
+          <h3>No Schedule Available</h3>
+          <p>Could not find schedule information for this train number.</p>
           <p>Please verify the train number and try again.</p>
         </div>
       )}
