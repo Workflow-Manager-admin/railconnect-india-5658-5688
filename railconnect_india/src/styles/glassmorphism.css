@@ -684,6 +684,12 @@
   gap: 2rem;
 }
 
+@media (min-width: 992px) {
+  .sections-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .section-card {
   display: flex;
   flex-direction: column;
