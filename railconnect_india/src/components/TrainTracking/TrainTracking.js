@@ -74,7 +74,7 @@ const TrainTracking = () => {
       <form onSubmit={handleSubmit} className="tracking-form">
         <div className="form-row">
           <div className="form-group tracking-input-group">
-            <label htmlFor="train-number">Enter Train Number</label>
+            <label htmlFor="train-number">Enter Train Number for Schedule</label>
             <Input
               type="text"
               id="train-number"
@@ -82,8 +82,8 @@ const TrainTracking = () => {
               value={trainNumber}
               onChange={handleInputChange}
               required
-              pattern="[0-9]{5}"
-              title="Please enter a valid 5-digit train number"
+              pattern="[0-9]+"
+              title="Please enter a valid train number"
             />
           </div>
           <div className="form-group tracking-button-group">
