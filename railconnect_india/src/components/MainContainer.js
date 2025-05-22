@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import TrainBooking from './TrainBooking/TrainBooking';
 import TrainTracking from './TrainTracking/TrainTracking';
 import Card from './ui/Card';
+import Button from './ui/Button';
 import '../styles/glassmorphism.css';
 
 /**
