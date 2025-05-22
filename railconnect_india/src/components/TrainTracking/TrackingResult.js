@@ -27,8 +27,8 @@ const TrackingResult = ({ trackingData, isLoading, error }) => {
   if (error) {
     return (
       <Card className="tracking-error">
-        <h3>Error Fetching Data</h3>
-        <p>{error.message || 'Failed to fetch train tracking information. Please try again.'}</p>
+        <h3>Error Fetching Schedule</h3>
+        <p>{error.message || 'Failed to fetch train schedule information. Please try again.'}</p>
         <p className="error-details">
           This could be due to network issues, invalid train number, or API limitations.
         </p>
