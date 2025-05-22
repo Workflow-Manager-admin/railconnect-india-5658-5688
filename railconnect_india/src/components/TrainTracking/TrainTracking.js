@@ -6,7 +6,7 @@ import trainAPI from '../../services/trainAPI';
 import '../../styles/glassmorphism.css';
 
 /**
- * TrainTracking component for getting real-time train status
+ * TrainTracking component for getting train schedule information
  * 
  * PUBLIC_INTERFACE
  */
